@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 main.py - Sistema de Gestión de Biblioteca
 ==========================================
@@ -19,7 +20,13 @@ Autor: Sistema generado para el Proyecto Final de Biblioteca
 """
 
 import os
+import sys
 from datetime import datetime
+
+# Forzar UTF-8 en la salida estándar (necesario en terminales Windows)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 from modelo.modelos import Libro, Socio
 from errores.errores import (
     ErrorBiblioteca,
