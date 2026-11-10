@@ -1,0 +1,15 @@
+S001|Ana García López|ana.garcia@email.com|NONE
+S002|Carlos Martínez Ruiz|carlos.martinez@email.com|NONE
+S003|María Fernández Pérez|maria.fernandez@email.com|NONE
+S004|Juan Rodríguez Sánchez|juan.rodriguez@email.com|NONE
+S005|Laura González Torres|laura.gonzalez@email.com|NONE
+S006|Pedro Jiménez Moreno|pedro.jimenez@email.com|NONE
+S007|Elena Ramírez Castro|elena.ramirez@email.com|NONE
+S008|Diego López Herrera|diego.lopez@email.com|NONE
+S009|Sofía Hernández Vega|sofia.hernandez@email.com|NONE
+S010|Andrés Díaz Molina|andres.diaz@email.com|NONE
+S011|Carmen Álvarez Ramos|carmen.alvarez@email.com|NONE
+S012|Roberto Muñoz Blanco|roberto.munoz@email.com|NONE
+S013|Isabel Romero Reyes|isabel.romero@email.com|NONE
+S014|Francisco Moreno Gil|francisco.moreno@email.com|NONE
+S015|Patricia Suárez Rubio|patricia.suarez@email.com|NONE

@@ -1,0 +1,100 @@
+L001|Don Quijote de la Mancha|Miguel de Cervantes|1605|Clásico|NONE
+L002|Cien años de soledad|Gabriel García Márquez|1967|Realismo mágico|NONE
+L003|El nombre de la rosa|Umberto Eco|1980|Misterio|NONE
+L004|1984|George Orwell|1949|Distopía|NONE
+L005|Crimen y castigo|Fiódor Dostoyevski|1866|Novela psicológica|NONE
+L006|El gran Gatsby|F. Scott Fitzgerald|1925|Clásico|NONE
+L007|Matar a un ruiseñor|Harper Lee|1960|Drama|NONE
+L008|Cumbres borrascosas|Emily Brontë|1847|Romance|NONE
+L009|El señor de los anillos|J.R.R. Tolkien|1954|Fantasía|NONE
+L010|Harry Potter y la piedra filosofal|J.K. Rowling|1997|Fantasía|NONE
+L011|Orgullo y prejuicio|Jane Austen|1813|Romance|NONE
+L012|La metamorfosis|Franz Kafka|1915|Absurdismo|NONE
+L013|Brave New World|Aldous Huxley|1932|Distopía|NONE
+L014|El principito|Antoine de Saint-Exupéry|1943|Fábula|NONE
+L015|Guerra y paz|León Tolstói|1869|Histórica|NONE
+L016|Anna Karenina|León Tolstói|1878|Drama|NONE
+L017|La Odisea|Homero|-800|Épica|NONE
+L018|Hamlet|William Shakespeare|1603|Teatro|NONE
+L019|El retrato de Dorian Gray|Oscar Wilde|1890|Gótico|NONE
+L020|Drácula|Bram Stoker|1897|Terror|NONE
+L021|Frankenstein|Mary Shelley|1818|Terror|NONE
+L022|Moby Dick|Herman Melville|1851|Aventura|NONE
+L023|Los miserables|Victor Hugo|1862|Histórica|NONE
+L024|El conde de Montecristo|Alexandre Dumas|1844|Aventura|NONE
+L025|Madame Bovary|Gustave Flaubert|1857|Realismo|NONE
+L026|La casa de los espíritus|Isabel Allende|1982|Realismo mágico|NONE
+L027|Rayuela|Julio Cortázar|1963|Vanguardia|NONE
+L028|Pedro Páramo|Juan Rulfo|1955|Realismo mágico|NONE
+L029|Ficciones|Jorge Luis Borges|1944|Cuentos|NONE
+L030|El túnel|Ernesto Sábato|1948|Novela psicológica|NONE
+L031|La ciudad y los perros|Mario Vargas Llosa|1963|Realismo|NONE
+L032|El aleph|Jorge Luis Borges|1949|Cuentos|NONE
+L033|Conversación en La Catedral|Mario Vargas Llosa|1969|Realismo|NONE
+L034|Sobre el amor y la muerte|Patrick Süskind|2006|Ensayo|NONE
+L035|El perfume|Patrick Süskind|1985|Histórica|NONE
+L036|La insoportable levedad del ser|Milan Kundera|1984|Filosófica|NONE
+L037|El proceso|Franz Kafka|1925|Absurdismo|NONE
+L038|Lolita|Vladimir Nabokov|1955|Controversia|NONE
+L039|En busca del tiempo perdido|Marcel Proust|1913|Modernismo|NONE
+L040|Ulises|James Joyce|1922|Modernismo|NONE
+L041|El viejo y el mar|Ernest Hemingway|1952|Aventura|NONE
+L042|Por quién doblan las campanas|Ernest Hemingway|1940|Bélica|NONE
+L043|Adiós a las armas|Ernest Hemingway|1929|Bélica|NONE
+L044|Las uvas de la ira|John Steinbeck|1939|Realismo social|NONE
+L045|De ratones y hombres|John Steinbeck|1937|Realismo social|NONE
+L046|La granja de los animales|George Orwell|1945|Fábula política|NONE
+L047|El guardián entre el centeno|J.D. Salinger|1951|Bildungsroman|NONE
+L048|A sangre fría|Truman Capote|1966|No ficción|NONE
+L049|Beloved|Toni Morrison|1987|Histórica|NONE
+L050|El color púrpura|Alice Walker|1982|Drama|NONE
+L051|La campana de cristal|Sylvia Plath|1963|Autobiográfica|NONE
+L052|Lo que el viento se llevó|Margaret Mitchell|1936|Histórica|NONE
+L053|Rebecca|Daphne du Maurier|1938|Gótico|NONE
+L054|Jane Eyre|Charlotte Brontë|1847|Romance|NONE
+L055|Sentido y sensibilidad|Jane Austen|1811|Romance|NONE
+L056|Emma|Jane Austen|1815|Romance|NONE
+L057|Persuasión|Jane Austen|1817|Romance|NONE
+L058|Sherlock Holmes: Estudio en escarlata|Arthur Conan Doyle|1887|Misterio|NONE
+L059|El hombre invisible|H.G. Wells|1897|Ciencia ficción|NONE
+L060|La guerra de los mundos|H.G. Wells|1898|Ciencia ficción|NONE
+L061|Viaje al centro de la Tierra|Jules Verne|1864|Aventura|NONE
+L062|La vuelta al mundo en 80 días|Jules Verne|1872|Aventura|NONE
+L063|20.000 leguas de viaje submarino|Jules Verne|1870|Aventura|NONE
+L064|Fundación|Isaac Asimov|1951|Ciencia ficción|NONE
+L065|Yo, robot|Isaac Asimov|1950|Ciencia ficción|NONE
+L066|¿Sueñan los androides con ovejas eléctricas?|Philip K. Dick|1968|Ciencia ficción|NONE
+L067|Dune|Frank Herbert|1965|Ciencia ficción|NONE
+L068|El hobbit|J.R.R. Tolkien|1937|Fantasía|NONE
+L069|Las crónicas de Narnia|C.S. Lewis|1950|Fantasía|NONE
+L070|El juego de Ender|Orson Scott Card|1985|Ciencia ficción|NONE
+L071|Neuromante|William Gibson|1984|Cyberpunk|NONE
+L072|Snow Crash|Neal Stephenson|1992|Cyberpunk|NONE
+L073|El marciano|Andy Weir|2011|Ciencia ficción|NONE
+L074|La carretera|Cormac McCarthy|2006|Post-apocalíptica|NONE
+L075|No es país para viejos|Cormac McCarthy|2005|Thriller|NONE
+L076|Blood Meridian|Cormac McCarthy|1985|Western|NONE
+L077|American Gods|Neil Gaiman|2001|Fantasía|NONE
+L078|Buenos Presagios|Terry Pratchett y Neil Gaiman|1990|Comedia|NONE
+L079|El nombre del viento|Patrick Rothfuss|2007|Fantasía épica|NONE
+L080|La sombra del viento|Carlos Ruiz Zafón|2001|Misterio|NONE
+L081|El juego del ángel|Carlos Ruiz Zafón|2008|Misterio|NONE
+L082|Ángeles y demonios|Dan Brown|2000|Thriller|NONE
+L083|El código Da Vinci|Dan Brown|2003|Thriller|NONE
+L084|La chica del tren|Paula Hawkins|2015|Thriller psicológico|NONE
+L085|Gone Girl|Gillian Flynn|2012|Thriller psicológico|NONE
+L086|El silencio de los corderos|Thomas Harris|1988|Thriller|NONE
+L087|Drácula de Bram Stoker|Fred Saberhagen|1975|Terror|NONE
+L088|It|Stephen King|1986|Terror|NONE
+L089|El resplandor|Stephen King|1977|Terror|NONE
+L090|Carrie|Stephen King|1974|Terror|NONE
+L091|La historia interminable|Michael Ende|1979|Fantasía|NONE
+L092|Momo|Michael Ende|1973|Fantasía|NONE
+L093|El pequeño vampiro|Angela Sommer-Bodenburg|1979|Infantil|NONE
+L094|Coraline|Neil Gaiman|2002|Fantasía oscura|NONE
+L095|La ladrona de libros|Markus Zusak|2005|Histórica|NONE
+L096|El diario de Ana Frank|Ana Frank|1947|Autobiográfica|NONE
+L097|Si esto es un hombre|Primo Levi|1947|Testimonio|NONE
+L098|La noche|Elie Wiesel|1960|Testimonio|NONE
+L099|En el camino|Jack Kerouac|1957|Beatnik|NONE
+L100|El alquimista|Paulo Coelho|1988|Filosófica|NONE
