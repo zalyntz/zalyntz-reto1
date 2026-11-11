@@ -1,8 +1,3 @@
-[2026-11-10 20:04:30][INICIO][El sistema de biblioteca se ha iniciado.]
-[2026-11-10 20:04:30][PRÉSTAMO][Libro 'L005' (Crimen y castigo) prestado al socio 'S002' (Carlos Martínez Ruiz)]
-[2026-11-10 20:04:30][ERROR_PRÉSTAMO][[LIBRO_NO_DISP] El libro 'L005' no está disponible. — Detalle: Actualmente prestado al socio 'S002'.]
-[2026-11-10 20:04:30][DEVOLUCIÓN][Socio 'S002' (Carlos Martínez Ruiz) devolvió el libro 'L005' (Crimen y castigo)]
-[2026-11-10 20:04:30][CIERRE][El sistema se cerró correctamente y los datos fueron guardados.]
 [2026-11-10 20:05:54][INICIO][El sistema de biblioteca se ha iniciado.]
 [2026-11-10 20:06:55][CIERRE][El sistema se cerró correctamente y los datos fueron guardados.]
 [2026-11-11 12:28:39][INICIO][El sistema de biblioteca se ha iniciado.]
