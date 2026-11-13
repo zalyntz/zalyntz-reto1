@@ -335,3 +335,70 @@ def menu_aniadir():
         aniadir_libro()
     else:
         print("Opcion no valida.\n")
+
+
+# =====================================================================
+# MENU PRINCIPAL CICLICO
+# =====================================================================
+
+MENU_TEXTO = """
+========================================
+    SISTEMA DE GESTION DE BIBLIOTECA
+========================================
+  1. Mostrar todos los libros
+  2. Mostrar libros disponibles
+  3. Buscar libro por titulo
+  4. Prestar un libro a un socio
+  5. Devolver libro de un socio
+  6. Mostrar socios con libros prestados
+  7. Anadir socios y libros
+  8. Salir y guardar datos
+========================================
+"""
+
+OPCIONES = {
+    "1": listar_todos_los_libros,
+    "2": listar_libros_disponibles,
+    "3": buscar_libro_por_titulo,
+    "4": prestar_libro,
+    "5": devolver_libro,
+    "6": mostrar_socios_con_libros,
+    "7": menu_aniadir,
+}
+
+def ejecutar_menu():
+    # Bucle ciclico hasta que el usuario elija la opcion 8
+    while True:
+        print(MENU_TEXTO)
+        opcion = input("Elige una opcion (1-8): ").strip()
+
+        if opcion == "8":
+            guardar_todo()
+            print("\nHasta pronto!\n")
+            break
+        elif opcion in OPCIONES:
+            OPCIONES[opcion]()
+        else:
+            print("\nOpcion no valida. Introduce un numero del 1 al 8.\n")
+
+
+# =====================================================================
+# INICIO DEL PROGRAMA
+# =====================================================================
+
+def main():
+    print("\n" + "=" * 50)
+    print("   INICIANDO BIBLIOTECA")
+    print("=" * 50)
+    
+    # Cargar datos iniciales
+    cargar_libros()
+    cargar_socios()
+    print("=" * 50)
+    
+    registrar_log("INICIO", "El sistema de biblioteca se ha iniciado.")
+    ejecutar_menu()
+
+
+if __name__ == "__main__":
+    main()
