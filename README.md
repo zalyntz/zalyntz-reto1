@@ -1,19 +1,9 @@
-# 📚 Sistema de Gestión de Biblioteca
+# Sistema de Gestión de Biblioteca
 
 Proyecto final de Programación — Sistema de gestión de biblioteca desarrollado en Python con Programación Orientada a Objetos.
 
-## 🚀 Cómo ejecutar
+##  Estructura del proyecto
 
-```bash
-# Desde la raíz del proyecto:
-python main.py
-```
-
-> Requiere Python 3.10 o superior (uso de `str | None` en type hints).
-
-## 📁 Estructura del proyecto
-
-```
 proyecto/
 ├── datos/
 │   ├── libros.txt       # 100 libros (generado por IA)
@@ -29,20 +19,20 @@ proyecto/
 └── README.md
 ```
 
-## ✅ Funcionalidades
+## Mi Menu
 
 | Opción | Descripción |
 |--------|-------------|
 | 1 | Ver todos los libros en formato tabla |
 | 2 | Ver sólo los libros disponibles |
-| 3 | Buscar libro por término en el título (sin distinción mayúsculas) |
+| 3 | Buscar libro por término en el título |
 | 4 | Prestar libro a un socio |
 | 5 | Devolver el libro de un socio |
 | 6 | Ver socios con préstamos activos |
 | 7 | Añadir nuevo socio o libro |
 | 8 | Salir y guardar todos los datos |
 
-## 🗂 Formato de los ficheros
+## Formato de los ficheros
 
 **libros.txt** — cada línea: `CODIGO|TITULO|AUTOR|AÑO|CATEGORIA|COD_SOCIO_O_NONE`
 
@@ -50,12 +40,12 @@ proyecto/
 
 **log.txt** — cada línea: `[FECHA][EVENTO][DETALLE]`
 
-## 🏗 Diseño orientado a objetos
+## Diseño orientado a objetos
 
 ### Clase `Libro` (modelo/modelos.py)
 - Atributos: `codigo`, `titulo`, `autor`, `anio`, `categoria`, `codigo_socio`
 - Método personalizado: `esta_disponible()` → bool
-- Método personalizado: `resumen_corto()` → str (formato legible de una línea)
+- Método personalizado: `resumen_corto()` → str 
 - Serialización: `a_linea_txt()` / `desde_linea_txt()`
 
 ### Clase `Socio` (modelo/modelos.py)
@@ -73,29 +63,14 @@ proyecto/
 - `SocioSinLibroError` — socio no tiene libro para devolver
 - `CodigoDuplicadoError` — intento de añadir código ya existente
 
-## 📝 Log de actividad
+## Posibles mejoras
 
-Los eventos se registran automáticamente en `log.txt`:
-```
-[2026-11-10 19:00:00][INICIO][El sistema de biblioteca se ha iniciado.]
-[2026-11-10 19:01:30][PRÉSTAMO][Libro 'L005' prestado al socio 'S002']
-[2026-11-10 19:05:00][DEVOLUCIÓN][Socio 'S002' devolvió el libro 'L005']
-```
-
-## 🔧 Posibles mejoras
-
-- **Interfaz gráfica**: Implementar una GUI con `tkinter` o una interfaz web con `Flask`.
-- **Base de datos**: Migrar el almacenamiento de ficheros `.txt` a SQLite usando `sqlite3`.
-- **Múltiples préstamos**: Permitir que un socio tenga más de un libro prestado simultáneamente.
-- **Fechas de préstamo y devolución**: Registrar cuándo se prestó un libro y calcular si está vencido.
+- **Base de datos**: Migrar el almacenamiento de ficheros `.txt` a SQL.
+- **Múltiples préstamos**: Permitir que un socio tenga más de un libro prestado .
+- **Fechas de préstamo y devolución**: Registrar cuándo se prestó un libro .
 - **Sistema de reservas**: Que un socio pueda reservar un libro actualmente prestado.
-- **Búsqueda avanzada**: Buscar por autor, categoría, año, o combinar criterios.
+- **Búsqueda avanzada**: Buscar por autor, categoría, año,.
 - **Exportar a CSV o PDF**: Generar informes en diferentes formatos.
-- **Sistema de usuarios con contraseña**: Proteger el acceso con autenticación básica.
+- **Sistema de usuarios con contraseña**
 - **Categorías y etiquetas**: Mejorar la clasificación con múltiples categorías por libro.
 - **Historial de préstamos**: Mantener un registro histórico completo de todos los préstamos.
-
-## 👤 Autor
-
-Proyecto desarrollado como entrega final del módulo de Programación.  
-Repositorio: https://github.com/zalyntz/zalyntz-reto1
