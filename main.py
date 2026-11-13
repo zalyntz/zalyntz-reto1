@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-main.py - Sistema de Gestion de Biblioteca
-Punto de entrada de la aplicacion.
-"""
-
 import os
 import sys
 
