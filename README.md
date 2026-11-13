@@ -38,39 +38,6 @@ Menú cíclico con las siguientes opciones:
 7. Añadir socios o libros
 8. Guardar y salir
 
-## Diseño
-
-### Modelo (`modelo/modelos.py`)
-
-| Clase | Atributos | Métodos principales |
-|-------|-----------|---------------------|
-| `Libro` | `codigo`, `titulo`, `autor`, `anio`, `categoria`, `codigo_socio` | `esta_disponible()`, `resumen_corto()` |
-| `Socio` | `codigo`, `nombre`, `email`, `codigo_libro` | `tiene_libro_prestado()`, `ficha_socio()` |
-
-Ambas clases incluyen `a_linea_txt()` y `desde_linea_txt()` para la persistencia.
-
-### Excepciones (`errores/errores.py`)
-
-`ErrorBiblioteca` es la clase base (atributos `mensaje`, `codigo`, `detalle`). De ella derivan:
-
-- `LibroNoDisponibleError`: el libro ya está prestado
-- `SocioConLibroError`: el socio ya tiene un préstamo
-- `LibroNoEncontradoError`: el libro no existe
-- `SocioNoEncontradoError`: el socio no existe
-- `SocioSinLibroError`: el socio no tiene libro que devolver
-- `CodigoDuplicadoError`: el código ya existe
-
-## Persistencia y log
-
-Al arrancar se cargan los datos de `datos/`; la opción 8 guarda el estado actual.
-
-| Fichero | Formato por línea |
-|---------|-------------------|
-| `libros.txt` | `CODIGO\|TITULO\|AUTOR\|AÑO\|CATEGORIA\|COD_SOCIO_O_NONE` |
-| `socios.txt` | `CODIGO\|NOMBRE\|EMAIL\|COD_LIBRO_O_NONE` |
-| `log.txt` | `[FECHA][EVENTO][DETALLE]` |
-
-Se registran arranques, préstamos, devoluciones, altas y errores.
 
 ## Posibles mejoras
 
