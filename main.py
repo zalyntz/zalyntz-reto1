@@ -7,6 +7,7 @@ Punto de entrada de la aplicacion.
 import os
 import sys
 
+from datetime import datetime
 from modelo.modelos import Libro, Socio
 from errores.errores import (
     ErrorBiblioteca,
@@ -27,6 +28,18 @@ RUTA_LOG    = os.path.join(BASE_DIR, "log.txt")
 # Diccionarios para guardar los datos en memoria
 libros = {}
 socios = {}
+
+
+# =====================================================================
+# FUNCION PARA EL LOG DE ACTIVIDAD
+# Guarda los eventos en log.txt con formato [Fecha][nombre del evento][detalles]
+# =====================================================================
+
+def registrar_log(evento, detalle):
+    fecha_actual = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    linea = f"[{fecha_actual}][{evento}][{detalle}]\n"
+    with open(RUTA_LOG, "a", encoding="utf-8") as f:
+        f.write(linea)
 
 
 # =====================================================================
@@ -84,3 +97,4 @@ def guardar_todo():
     guardar_libros()
     guardar_socios()
     print("\nDatos guardados correctamente en los ficheros.")
+    registrar_log("CIERRE", "El sistema se cerro correctamente y se guardaron los datos.")
