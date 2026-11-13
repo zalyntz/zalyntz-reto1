@@ -98,3 +98,61 @@ def guardar_todo():
     guardar_socios()
     print("\nDatos guardados correctamente en los ficheros.")
     registrar_log("CIERRE", "El sistema se cerro correctamente y se guardaron los datos.")
+
+
+# =====================================================================
+# FUNCIONES DE FORMATO Y MOSTRAR DATOS
+# =====================================================================
+
+def imprimir_cabecera_libros():
+    print("=" * 75)
+    print(f"{'COD.':<6} {'TITULO':<35} {'AUTOR':<20} {'AÑO':>4}  {'ESTADO'}")
+    print("-" * 75)
+
+def imprimir_fila_libro(libro):
+    titulo = (libro.titulo[:32] + "...") if len(libro.titulo) > 35 else libro.titulo
+    autor  = (libro.autor[:17] + "...")  if len(libro.autor)  > 20 else libro.autor
+    estado = "Disponible" if libro.esta_disponible() else f"Prestado -> {libro.codigo_socio}"
+    print(f"{libro.codigo:<6} {titulo:<35} {autor:<20} {libro.anio:>4}  {estado}")
+
+
+# Opcion 1: Listar todos los libros
+def listar_todos_los_libros():
+    print("\n--- LISTA DE TODOS LOS LIBROS ---")
+    imprimir_cabecera_libros()
+    for libro in libros.values():
+        imprimir_fila_libro(libro)
+    print("=" * 75)
+    print(f"Total: {len(libros)} libros en la biblioteca\n")
+
+
+# Opcion 2: Listar libros disponibles
+def listar_libros_disponibles():
+    disponibles = [l for l in libros.values() if l.esta_disponible()]
+    print("\n--- LIBROS DISPONIBLES ---")
+    imprimir_cabecera_libros()
+    for libro in disponibles:
+        imprimir_fila_libro(libro)
+    print("=" * 75)
+    print(f"Disponibles: {len(disponibles)} de {len(libros)}\n")
+
+
+# Opcion 3: Buscar libro por titulo (sin distinguir mayusculas/minusculas)
+def buscar_libro_por_titulo():
+    termino = input("\nIntroduce el texto a buscar en el titulo: ").strip()
+    if not termino:
+        print("Aviso: No has introducido ningun termino.")
+        return
+
+    encontrados = [l for l in libros.values() if termino.lower() in l.titulo.lower()]
+
+    if not encontrados:
+        print(f"No existe ningun libro con '{termino}' en el titulo.\n")
+        return
+
+    print(f"\n--- RESULTADOS PARA '{termino}' ---")
+    imprimir_cabecera_libros()
+    for libro in encontrados:
+        imprimir_fila_libro(libro)
+    print("=" * 75)
+    print(f"Se han encontrado {len(encontrados)} libro(s).\n")
