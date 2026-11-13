@@ -2,23 +2,6 @@
 
 Proyecto final de Programación — Sistema de gestión de biblioteca desarrollado en Python con Programación Orientada a Objetos.
 
-##  Estructura del proyecto
-
-proyecto/
-├── datos/
-│   ├── libros.txt       # 100 libros (generado por IA)
-│   └── socios.txt       # 15 socios (generado por IA)
-├── errores/
-│   ├── __init__.py
-│   └── errores.py       # Excepciones personalizadas
-├── modelo/
-│   ├── __init__.py
-│   └── modelos.py       # Clases Libro y Socio
-├── log.txt              # Generado automáticamente al ejecutar
-├── main.py              # Punto de entrada y menú principal
-└── README.md
-```
-
 ## Mi Menu
 
 | Opción | Descripción |
