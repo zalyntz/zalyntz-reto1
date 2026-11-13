@@ -267,3 +267,71 @@ def mostrar_socios_con_libros():
         print(f"{socio.codigo:<6} {socio.nombre:<28} {socio.codigo_libro:<12} {titulo_corto}")
     print("=" * 75)
     print(f"Total: {len(socios_con_libro)} socio(s) con prestamo activo\n")
+
+
+# =====================================================================
+# FUNCIONES PARA ANADIR SOCIOS Y LIBROS
+# =====================================================================
+
+# Opcion 7a: Anadir nuevo socio
+def aniadir_socio():
+    print("\n--- ANADIR SOCIO ---")
+    codigo = input("Codigo del socio (ej: S016): ").strip().upper()
+    nombre = input("Nombre completo: ").strip()
+    email  = input("Email: ").strip()
+
+    try:
+        if codigo in socios:
+            raise CodigoDuplicadoError("socio", codigo)
+
+        nuevo_socio = Socio(codigo, nombre, email)
+        socios[codigo] = nuevo_socio
+        print(f"\nSocio '{nombre}' ({codigo}) anadido correctamente.\n")
+        registrar_log("NUEVO_SOCIO", f"Socio '{codigo}' ({nombre}, {email}) anadido.")
+
+    except CodigoDuplicadoError as e:
+        print(f"\nError [{e.codigo}]: {e.mensaje}")
+        print(f"Detalle: {e.detalle}\n")
+
+
+# Opcion 7b: Anadir nuevo libro
+def aniadir_libro():
+    print("\n--- ANADIR LIBRO ---")
+    codigo    = input("Codigo del libro (ej: L101): ").strip().upper()
+    titulo    = input("Titulo: ").strip()
+    autor     = input("Autor: ").strip()
+    anio_str  = input("Anyo de publicacion: ").strip()
+    categoria = input("Categoria: ").strip()
+
+    try:
+        if codigo in libros:
+            raise CodigoDuplicadoError("libro", codigo)
+
+        try:
+            anio = int(anio_str)
+        except ValueError:
+            print(f"\nError: El anyo '{anio_str}' no es valido.\n")
+            return
+
+        nuevo_libro = Libro(codigo, titulo, autor, anio, categoria)
+        libros[codigo] = nuevo_libro
+        print(f"\nLibro '{titulo}' ({codigo}) anadido correctamente.\n")
+        registrar_log("NUEVO_LIBRO", f"Libro '{codigo}' ({titulo}, {autor}, {anio}) anadido.")
+
+    except CodigoDuplicadoError as e:
+        print(f"\nError [{e.codigo}]: {e.mensaje}")
+        print(f"Detalle: {e.detalle}\n")
+
+
+def menu_aniadir():
+    print("\n--- ANADIR ---")
+    print("  1. Anadir socio")
+    print("  2. Anadir libro")
+    opcion = input("Elige una opcion (1 o 2): ").strip()
+
+    if opcion == "1":
+        aniadir_socio()
+    elif opcion == "2":
+        aniadir_libro()
+    else:
+        print("Opcion no valida.\n")
