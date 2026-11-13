@@ -188,9 +188,9 @@ def prestar_libro():
         if socio.tiene_libro_prestado():
             raise SocioConLibroError(cod_socio, socio.codigo_libro)
 
-        # Realizamos el prestamo
-        libro.codigo_socio = cod_socio
-        socio.codigo_libro = cod_libro
+        # Realizamos el prestamo actualizando ambos objetos mediante sus metodos
+        libro.prestar(cod_socio)
+        socio.asignar_libro(cod_libro)
 
         print(f"\nPrestamo realizado: '{libro.titulo}' prestado a {socio.nombre}\n")
 
@@ -226,10 +226,10 @@ def devolver_libro():
         cod_libro = socio.codigo_libro
         libro = libros.get(cod_libro)
 
-        # Liberamos el libro en el socio y en el libro
-        socio.codigo_libro = None
+        # Liberamos el prestamo en ambos objetos mediante sus propios metodos
+        socio.devolver_libro()
         if libro:
-            libro.codigo_socio = None
+            libro.devolver()
             titulo_libro = libro.titulo
         else:
             titulo_libro = cod_libro

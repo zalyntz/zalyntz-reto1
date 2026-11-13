@@ -24,6 +24,14 @@ class Libro:
         estado = "Disponible" if self.esta_disponible() else f"Prestado -> {self.codigo_socio}"
         return f"[{self.codigo}] {self.titulo} - {self.autor} ({self.anio}) | {self.categoria} | {estado}"
 
+    # Metodo personalizado: actualiza el estado del libro al prestarlo
+    def prestar(self, cod_socio):
+        self.codigo_socio = cod_socio
+
+    # Metodo personalizado: actualiza el estado del libro al devolverlo
+    def devolver(self):
+        self.codigo_socio = None
+
     # Convierte el libro a formato texto para guardarlo en el fichero
     def a_linea_txt(self):
         socio = self.codigo_socio if self.codigo_socio else "NONE"
@@ -58,6 +66,14 @@ class Socio:
     def ficha_socio(self):
         libro_actual = self.codigo_libro if self.tiene_libro_prestado() else "Ninguno"
         return f"Socio: [{self.codigo}] {self.nombre} | Email: {self.email} | Libro prestado: {libro_actual}"
+
+    # Metodo personalizado: asigna un libro en prestamo al socio
+    def asignar_libro(self, cod_libro):
+        self.codigo_libro = cod_libro
+
+    # Metodo personalizado: retira el libro en prestamo del socio
+    def devolver_libro(self):
+        self.codigo_libro = None
 
     # Convierte el socio a formato texto para guardarlo en el fichero
     def a_linea_txt(self):
