@@ -1,18 +1,16 @@
 
 # Sistema de Gestion de Biblioteca
 
-Proyecto final de Programacion (DAM). Sistema de gestion de una biblioteca por consola desarrollado en Python con Programacion Orientada a Objetos, funciones modulares, persistencia en ficheros de texto y manejo de excepciones personalizadas.
-
 ## Como ejecutar el proyecto
 
 1. Abrir una terminal en la carpeta del proyecto:
-   ```bash
+ 
    cd biblioteca
-   ```
+  
 2. Ejecutar el fichero principal:
-   ```bash
+  
    python main.py
-   ```
+ 
 
 ## Estructura del proyecto
 
@@ -29,7 +27,7 @@ proyecto/
 │   └── modelos.py       # Clases Libro y Socio
 ├── log.txt              # Registro de eventos
 ├── main.py              # Menu y funciones del sistema
-└── README.md            # Documentacion
+└── README.md           
 ```
 
 ## Requisitos implementados
@@ -84,22 +82,8 @@ proyecto/
 5. **Busqueda avanzada**: Poder buscar por autor, categoria o anio ademas de por titulo.
 6. **Interfaz grafica**: Desarrollar una interfaz visual con Tkinter o una aplicacion web con Flask.
 =======
-# Sistema de Gestión de Biblioteca
 
-Proyecto final de Programación — Sistema de gestión de biblioteca desarrollado en Python con Programación Orientada a Objetos.
 
-## Mi Menu
-
-| Opción | Descripción |
-|--------|-------------|
-| 1 | Ver todos los libros en formato tabla |
-| 2 | Ver sólo los libros disponibles |
-| 3 | Buscar libro por término en el título |
-| 4 | Prestar libro a un socio |
-| 5 | Devolver el libro de un socio |
-| 6 | Ver socios con préstamos activos |
-| 7 | Añadir nuevo socio o libro |
-| 8 | Salir y guardar todos los datos |
 
 ## Formato de los ficheros
 
@@ -134,7 +118,7 @@ Proyecto final de Programación — Sistema de gestión de biblioteca desarrolla
 
 ## Posibles mejoras
 
-- **Base de datos**: Migrar el almacenamiento de ficheros `.txt` a SQL.
+- **Base de datos**:  el almacenamiento de ficheros `.txt` a SQL.
 - **Múltiples préstamos**: Permitir que un socio tenga más de un libro prestado .
 - **Fechas de préstamo y devolución**: Registrar cuándo se prestó un libro .
 - **Sistema de reservas**: Que un socio pueda reservar un libro actualmente prestado.
