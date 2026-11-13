@@ -1,24 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-main.py - Sistema de Gestión de Biblioteca
-==========================================
-Módulo principal que gestiona el menú y la lógica de la aplicación.
-
-Arquitectura:
-    proyecto/
-    ├── datos/
-    │   ├── libros.txt
-    │   └── socios.txt
-    ├── errores/
-    │   └── errores.py
-    ├── modelo/
-    │   └── modelos.py
-    ├── log.txt
-    └── main.py
-
-Autor: Sistema generado para el Proyecto Final de Biblioteca
-"""
-
 import os
 import sys
 from datetime import datetime
