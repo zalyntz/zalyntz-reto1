@@ -156,3 +156,114 @@ def buscar_libro_por_titulo():
         imprimir_fila_libro(libro)
     print("=" * 75)
     print(f"Se han encontrado {len(encontrados)} libro(s).\n")
+
+
+# =====================================================================
+# FUNCIONES DE PRESTAMOS Y DEVOLUCIONES
+# =====================================================================
+
+# Opcion 4: Prestar libro a un socio
+def prestar_libro():
+    print("\n--- PRESTAR LIBRO ---")
+    cod_libro = input("Codigo del libro: ").strip().upper()
+    cod_socio = input("Codigo del socio: ").strip().upper()
+
+    try:
+        # Comprobamos que el libro exista
+        if cod_libro not in libros:
+            raise LibroNoEncontradoError(cod_libro)
+
+        # Comprobamos que el socio exista
+        if cod_socio not in socios:
+            raise SocioNoEncontradoError(cod_socio)
+
+        libro = libros[cod_libro]
+        socio = socios[cod_socio]
+
+        # Comprobamos si el libro ya esta prestado
+        if not libro.esta_disponible():
+            raise LibroNoDisponibleError(cod_libro, libro.codigo_socio)
+
+        # Comprobamos si el socio ya tiene un libro
+        if socio.tiene_libro_prestado():
+            raise SocioConLibroError(cod_socio, socio.codigo_libro)
+
+        # Realizamos el prestamo
+        libro.codigo_socio = cod_socio
+        socio.codigo_libro = cod_libro
+
+        print(f"\nPrestamo realizado: '{libro.titulo}' prestado a {socio.nombre}\n")
+
+        # Guardamos en el log
+        registrar_log(
+            "PRESTAMO",
+            f"Libro '{cod_libro}' ({libro.titulo}) prestado a socio '{cod_socio}' ({socio.nombre})"
+        )
+
+    # Capturamos nuestra excepcion personalizada usando sus atributos de instancia
+    except ErrorBiblioteca as e:
+        print(f"\nError [{e.codigo}]: {e.mensaje}")
+        if e.detalle:
+            print(f"Detalle: {e.detalle}")
+        print()
+        registrar_log("ERROR_PRESTAMO", f"[{e.codigo}] {e.mensaje}")
+
+
+# Opcion 5: Devolver el libro de un socio
+def devolver_libro():
+    print("\n--- DEVOLVER LIBRO ---")
+    cod_socio = input("Codigo del socio: ").strip().upper()
+
+    try:
+        if cod_socio not in socios:
+            raise SocioNoEncontradoError(cod_socio)
+
+        socio = socios[cod_socio]
+
+        if not socio.tiene_libro_prestado():
+            raise SocioSinLibroError(cod_socio)
+
+        cod_libro = socio.codigo_libro
+        libro = libros.get(cod_libro)
+
+        # Liberamos el libro en el socio y en el libro
+        socio.codigo_libro = None
+        if libro:
+            libro.codigo_socio = None
+            titulo_libro = libro.titulo
+        else:
+            titulo_libro = cod_libro
+
+        print(f"\nDevolucion realizada: '{titulo_libro}' devuelto por {socio.nombre}\n")
+
+        registrar_log(
+            "DEVOLUCION",
+            f"Socio '{cod_socio}' ({socio.nombre}) devolvio el libro '{cod_libro}' ({titulo_libro})"
+        )
+
+    except ErrorBiblioteca as e:
+        print(f"\nError [{e.codigo}]: {e.mensaje}")
+        if e.detalle:
+            print(f"Detalle: {e.detalle}")
+        print()
+        registrar_log("ERROR_DEVOLUCION", f"[{e.codigo}] {e.mensaje}")
+
+
+# Opcion 6: Mostrar socios con libros prestados
+def mostrar_socios_con_libros():
+    socios_con_libro = [s for s in socios.values() if s.tiene_libro_prestado()]
+
+    print("\n--- SOCIOS CON LIBROS PRESTADOS ---")
+    if not socios_con_libro:
+        print("Ningun socio tiene libros prestados actualmente.\n")
+        return
+
+    print(f"{'COD.':<6} {'NOMBRE':<28} {'COD. LIBRO':<12} {'TITULO'}")
+    print("-" * 75)
+    for socio in socios_con_libro:
+        libro = libros.get(socio.codigo_libro)
+        titulo = libro.titulo if libro else "(no encontrado)"
+        titulo_corto = (titulo[:30] + "...") if len(titulo) > 33 else titulo
+        print(f"{socio.codigo:<6} {socio.nombre:<28} {socio.codigo_libro:<12} {titulo_corto}")
+    print("=" * 75)
+    print(f"Total: {len(socios_con_libro)} socio(s) con prestamo activo\n")
